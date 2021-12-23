@@ -1,0 +1,22 @@
+﻿﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 column-layout">
+            @Html.Partial("~/Areas/SuspensionReconnection/Views/Home/CustomerData.cshtml")
+        </div>        
+        <div id="content" class="col-md-9 column-layout">
+            <div class="col-md-12 column-layout">
+                @Html.Partial("~/Areas/SuspensionReconnection/Views/Home/ChoseSuspensionReconnection.cshtml")
+            </div>
+            <div class="col-md-12 column-layout" >
+                @Html.Partial("~/Areas/SuspensionReconnection/Views/Home/InformationCustomer.cshtml")
+            </div>
+        </div>           
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+@Scripts.Render("~/bundles/SuspensionReconnection/Script")

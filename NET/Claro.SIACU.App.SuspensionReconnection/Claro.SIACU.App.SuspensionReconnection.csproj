@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B5D75A1A-EC8D-48B3-9449-2C3CB2309661}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Claro.SIACU.App.SuspensionReconnection</RootNamespace>
+    <AssemblyName>Claro.SIACU.App.SuspensionReconnection</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Binaries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Tools.Entity">
+      <HintPath>..\Binaries\Tools.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Tools.Traces">
+      <HintPath>..\Binaries\Tools.Traces.dll</HintPath>
+    </Reference>
+    <Reference Include="Tools.Utils">
+      <HintPath>..\Binaries\Tools.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="Areas\SuspensionReconnection\Scripts\Bridge.js" />
+    <Content Include="Areas\SuspensionReconnection\Scripts\ChoseSuspensionReconnection.js" />
+    <Content Include="Areas\SuspensionReconnection\Scripts\SuspensionReconnection.js" />
+    <Content Include="Content\css\bootstrap-multiselect-v2.css" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\claro-fw.css" />
+    <Content Include="Content\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\css\datepicker.css" />
+    <Content Include="Content\css\fonts.css" />
+    <Content Include="Content\css\jquery.dataTables.select.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\SUFija\3playBlanco.png" />
+    <Content Include="Content\images\SUFija\Captura.PNG" />
+    <Content Include="Content\images\SUFija\claro-bg.png" />
+    <Content Include="Content\images\SUFija\favicon.ico" />
+    <Content Include="Content\images\SUFija\ico-save.svg" />
+    <Content Include="Content\images\SUFija\ico_3play.svg" />
+    <Content Include="Content\images\SUFija\ico_3play_md.svg" />
+    <Content Include="Content\images\SUFija\ico_3play_sm.svg" />
+    <Content Include="Content\images\SUFija\ico_add.svg" />
+    <Content Include="Content\images\SUFija\ico_additional_information.svg" />
+    <Content Include="Content\images\SUFija\ico_additional_services.svg" />
+    <Content Include="Content\images\SUFija\ico_alert_claro.svg" />
+    <Content Include="Content\images\SUFija\ico_benefits.svg" />
+    <Content Include="Content\images\SUFija\ico_benefits_off.svg" />
+    <Content Include="Content\images\SUFija\ico_cable.svg" />
+    <Content Include="Content\images\SUFija\ico_call.png" />
+    <Content Include="Content\images\SUFija\ico_clean.svg" />
+    <Content Include="Content\images\SUFija\ico_client.svg" />
+    <Content Include="Content\images\SUFija\ico_close.svg" />
+    <Content Include="Content\images\SUFija\ico_core_services.svg" />
+    <Content Include="Content\images\SUFija\ico_current_package.svg" />
+    <Content Include="Content\images\SUFija\ico_deco.svg" />
+    <Content Include="Content\images\SUFija\ico_default.svg" />
+    <Content Include="Content\images\SUFija\ico_detailed.svg" />
+    <Content Include="Content\images\SUFija\ico_detailed_off.svg" />
+    <Content Include="Content\images\SUFija\ico_equipos%402x.png" />
+    <Content Include="Content\images\SUFija\ico_internet.svg" />
+    <Content Include="Content\images\SUFija\ico_modem.svg" />
+    <Content Include="Content\images\SUFija\ico_new_package.svg" />
+    <Content Include="Content\images\SUFija\ico_node.svg" />
+    <Content Include="Content\images\SUFija\ico_nuevo_plan.svg" />
+    <Content Include="Content\images\SUFija\ico_otros.svg" />
+    <Content Include="Content\images\SUFija\ico_person.svg" />
+    <Content Include="Content\images\SUFija\ico_phone.svg" />
+    <Content Include="Content\images\SUFija\ico_router.svg" />
+    <Content Include="Content\images\SUFija\ico_scheduling.svg" />
+    <Content Include="Content\images\SUFija\ico_screen.svg" />
+    <Content Include="Content\images\SUFija\ico_speech.svg" />
+    <Content Include="Content\images\SUFija\ico_speech_off.svg" />
+    <Content Include="Content\images\SUFija\ico_summary.svg" />
+    <Content Include="Content\images\SUFija\ico_update.svg" />
+    <Content Include="Content\images\SUFija\img_3play_1.png" />
+    <Content Include="Content\images\SUFija\loading_Claro.gif" />
+    <Content Include="Content\Lib\BloqueoF12.js" />
+    <Content Include="Content\Lib\bootstrap-datepicker.js" />
+    <Content Include="Content\Lib\bootstrap-multiselect-v2.js" />
+    <Content Include="Content\Lib\bootstrap.js" />
+    <Content Include="Content\Lib\dataTables.bootstrap.min.js" />
+    <Content Include="Content\Lib\jquery-2.0.0.js" />
+    <Content Include="Content\Lib\jquery-ui.js" />
+    <Content Include="Content\Lib\jquery.blockUI.js" />
+    <Content Include="Content\Lib\jquery.dataTables.min.js" />
+    <Content Include="Content\Lib\jquery.dataTables.select.js" />
+    <Content Include="Content\Lib\jquery.numeric.js" />
+    <Content Include="Content\Lib\moment-es.js" />
+    <Content Include="Content\Lib\moment.js" />
+    <Content Include="Content\Scripts\polyfill.js" />
+    <Content Include="Content\Scripts\ReingApp.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\SuspensionReconnection\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SuspensionReconnection\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\SuspensionReconnection\Views\Home\Index.cshtml" />
+    <Content Include="Areas\SuspensionReconnection\Views\Redirect\Bridge.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\SuspensionReconnection\Controllers\HomeController.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Controllers\RedirectController.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\Audit\AuditResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\DataPower\FaultResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\DataPower\HeaderReq.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\DataPower\HeaderRequest.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\DataPower\HeaderRes.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\DataPower\HeaderResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\DataPower\HeaderStatusResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\DatosAdicionales\DatosAdicionalesRequest.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\DatosAdicionales\DatosAdicionalesResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\DatosAdicionales\ListaTipificacionRegla.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\DatosAdicionales\ListTipificacionPlusInter.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\DatosAdicionales\TransaccionProducto.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\InitialData\AdditionalFixedDataRequest.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\InitialData\AdditionalFixedDataResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\InitialData\AdditionalServicesResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\InitialData\ConfigurationResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\InitialData\CoreServicesResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\InitialData\CustomerInformationResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\InitialData\IgvResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\InitialData\InitialDataRequest.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\InitialData\InitialDataResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\Redirect\RedirectRequest.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\Redirect\RedirectResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\Transversal\GuardarDatosRequest.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Models\Transversal\GuardarDatosResponse.cs" />
+    <Compile Include="Areas\SuspensionReconnection\SuspensionReconnectionAreaRegistration.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Utils\BundleConfig.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Utils\Common.cs" />
+    <Compile Include="Areas\SuspensionReconnection\Utils\RestService.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\SuspensionReconnection\Views\web.config" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\Roboto-Regular.woff" />
+    <Content Include="Content\fonts\Roboto-Regular.woff2" />
+    <Content Include="Areas\SuspensionReconnection\Views\Home\CustomerData.cshtml" />
+    <Content Include="Areas\SuspensionReconnection\Views\Home\ChoseSuspensionReconnection.cshtml" />
+    <Content Include="Content\fonts\Lato-Regular.woff" />
+    <Content Include="Content\fonts\Lato-Regular.woff2" />
+    <Content Include="Areas\SuspensionReconnection\Views\Home\InformationCustomer.cshtml" />
+    <None Include="Properties\PublishProfiles\refry.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19060</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63968/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

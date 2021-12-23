@@ -1,0 +1,110 @@
+﻿<div class="col-md-12 column-layout">
+    <div class="container-fluid middle-container">
+        <div class="row">
+            <div class="bg-container">
+                <!--<div class="customer-data-title box title-box">-->
+                <div class="customer-data-title box">
+                    <div class="customer-data-title-items customer-data-title-icon" style="width: 5%; padding: 0">
+                        <span class="scheduling-icon"></span>
+                    </div>
+                    <div class="customer-data-title-items customer-data-title-label" style="padding-top: 10px; width: 95%">
+                        <span>SUSPENSIÓN / REACTIVACIÓN TEMPORAL</span>                        
+                    </div>                    
+                </div> 
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="calendarFecSus" class="label-cp">Fecha de Suspensión:</label>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control input-sm" id="calendarFecSus" placeholder="DD/MM/AAAA">
+                                    <label class="btn transaction-button input-group-addon" for="calendarFecSus">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="calendarFecReac" class="label-cp">Fecha de Reactivación:</label>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control input-sm" id="calendarFecReac" placeholder="DD/MM/AAAA">
+                                    <label class="btn transaction-button input-group-addon" for="calendarFecReac">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="txtImporPagar" class="label-cp">Importe a Pagar (S/):</label>
+                                <input type="text" class="form-control inputs-cp text-right" id="txtImporPagar" readonly="readonly" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="padding-top: 25px;">
+                            <div id="divChkRetencion" class="form-group" style="display : none">
+                                <input id="chkRetencion" class="style-checkbox" type="checkbox" value="true" style="margin:0px">
+                                <label for="chkRetencion" class="text-import">&ensp;Por Retención</label>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>   
+                <div class="customer-data-title box">
+                    <div class="customer-data-title-items customer-data-title-icon" style="width: 5%; padding: 0">
+                        <span class="additional_info-icon"></span>
+                    </div>
+                    <div class="customer-data-title-items customer-data-title-label" style="padding-top: 10px; width: 60%">
+                        <span>DATOS ADICIONALES</span>
+                    </div>
+                </div>  
+                <div class="panel-body">
+                    <div class="row">                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="company" class="label-cp">¿Enviar por email?</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <input id="chkSendMail" type="checkbox" class="style-checkbox" aria-label="..." checked="">
+                                        <label for="chkSendMail" class="inline-label"></label>
+                                    </span>
+                                    <input id="txtSendMail" type="text" class="form-control inputs-cp" value="" aria-label="...">
+                                </div>
+                                <p id="ErrorMessagetxtSendMail" class="alert-danger alert-message"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="company" class="label-cp">Punto de Atención:</label>
+                                <select id="ddlCenterofAttention" class="form-control input-sm ddlCenterofAttention"></select>
+                                <p id="ErrorMessageddlCenterofAttention" class="alert-danger alert-message"></p>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="company" class="label-cp">Notas.</label>
+                                <textarea id="txtNotas" class="form-control inputs-cp" rows="6" style="resize:none;"></textarea>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/Content/Lib/BloqueoF12")
+<style>
+    .datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
+    background: red;
+    color: white;
+    cursor: default;
+}
+</style>
+
