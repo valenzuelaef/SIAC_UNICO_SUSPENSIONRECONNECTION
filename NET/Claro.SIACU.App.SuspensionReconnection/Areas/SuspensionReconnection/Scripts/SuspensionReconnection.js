@@ -134,14 +134,19 @@
         },
 
         btnConstancy_Click: function () {
+            var that = this;
             var params = ['height=600',
                'width=750',
                'resizable=yes',
                'location=yes'
             ].join(',');
-
             var strIdSession = Session.UrlParams.IdSession;
-            window.open('/SuspensionReconnection/Home/ShowRecordSharedFile' + "?&strIdSession=" + strIdSession, "_blank", params);
+
+            if (that.TransactionSession.Data.Constancia)
+                window.open('/SuspensionReconnection/Home/ShowRecordSharedFile' + "?&strIdSession=" + strIdSession, "_blank", params);
+            else
+                alert('Ocurrió un error al generar la constancia.');
+
         },
 
         chkSendMail_Click: function (sender, arg) {
@@ -1653,6 +1658,8 @@
                             alert(that.TransactionSession.Data.Configuration.Constantes_MensajeFinal);
                             controls.btnConstancy.show();
                             controls.btnSave.hide();
+                            that.TransactionSession.Data.Constancia = !$.string.isEmptyOrNull(response.data.MessageResponse.Body.constancia) ? true : false;
+
                         } else {
                             alert('No se pudo ejecutar la transacción. Informe o vuelva a intentar')
                         }

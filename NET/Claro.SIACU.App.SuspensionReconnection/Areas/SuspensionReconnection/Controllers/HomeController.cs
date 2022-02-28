@@ -292,6 +292,7 @@ namespace Claro.SIACU.App.SuspensionReconnection.Areas.SuspensionReconnection.Co
 
             try
             {
+                databytesFile = null;
                 Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Url: " + strUrl); 
                 Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Request DP PostSuspensionReconecction: " + JsonConvert.SerializeObject(oDataRequest));
                 oDataResponse = Utils.RestService.PostInvoque<Models.Transversal.GuardarDatosResponse>(strUrl, oDataRequest.Audit, oDataRequest, true);
