@@ -1653,9 +1653,10 @@
                 data: JSON.stringify(objParameters),
                 global: false,
                 success: function (response) {
+                    console.log(response)
                     if (response != null) {
                             if (response.data != null && response.data.MessageResponse != null) {
-                                if (response.oDataResponse.MessageResponse.Body.idInteraccion != '') {
+                                if (response.data.MessageResponse.Body.idInteraccion != '') {
                                     alert(that.TransactionSession.Data.Configuration.Constantes_MensajeFinal);
                                     controls.btnConstancy.show();
                                     controls.btnSave.hide();

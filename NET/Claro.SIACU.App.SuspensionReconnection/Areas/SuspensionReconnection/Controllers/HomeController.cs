@@ -297,7 +297,6 @@ namespace Claro.SIACU.App.SuspensionReconnection.Areas.SuspensionReconnection.Co
                 Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Request DP PostSuspensionReconecction: " + JsonConvert.SerializeObject(oDataRequest));
                 oDataResponse = Utils.RestService.PostInvoque<Models.Transversal.GuardarDatosResponse>(strUrl, oDataRequest.Audit, oDataRequest, true);
                 Tools.Traces.Logging.Info(stridSession, oDataRequest.Audit.Transaction, "Response DP PostSuspensionReconecction: " + JsonConvert.SerializeObject(oDataResponse));
-
                 record = (oDataResponse.MessageResponse.Body.constancia == null) ? "" : oDataResponse.MessageResponse.Body.constancia;
                 databytesFile = Convert.FromBase64String(record);
             }
@@ -312,7 +311,7 @@ namespace Claro.SIACU.App.SuspensionReconnection.Areas.SuspensionReconnection.Co
 
             return Json(new
             {
-                oDataResponse
+                data = oDataResponse,
             }, JsonRequestBehavior.AllowGet);
         }
 
