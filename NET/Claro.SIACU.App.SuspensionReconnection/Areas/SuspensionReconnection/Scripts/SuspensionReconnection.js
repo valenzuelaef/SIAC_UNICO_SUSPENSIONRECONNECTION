@@ -1644,6 +1644,7 @@
                 idFlujo: '',
                 servicios: Services
             }
+            debugger;
             objParameters.TransactionID = that.TransactionSession.Data.idTransactionFront;
             $.ajax({
                 url: '/SuspensionReconnection/Home/postGeneraTransaccion',
@@ -1651,25 +1652,29 @@
                 type: 'POST',
                 data: JSON.stringify(objParameters),
                 global: false,
-                success: function (res) {
+                success: function (response) {
+                    if (response != null) {
+                            if (response.data != null && response.data.MessageResponse != null) {
+                                if (response.oDataResponse.MessageResponse.Body.idInteraccion != '') {
+                                    alert(that.TransactionSession.Data.Configuration.Constantes_MensajeFinal);
+                                    controls.btnConstancy.show();
+                                    controls.btnSave.hide();
+                                    that.TransactionSession.Data.Constancia = !$.string.isEmptyOrNull(response.data.MessageResponse.Body.constancia) ? true : false;
 
-                    if (res.oDataResponse.MessageResponse.Body.lstParam != null) {
-                        if (res.oDataResponse.MessageResponse.Body.codigoRespuesta == "0") {
-                            alert(that.TransactionSession.Data.Configuration.Constantes_MensajeFinal);
-                            controls.btnConstancy.show();
-                            controls.btnSave.hide();
-                            that.TransactionSession.Data.Constancia = !$.string.isEmptyOrNull(response.data.MessageResponse.Body.constancia) ? true : false;
-
-                        } else {
-                            alert('No se pudo ejecutar la transacción. Informe o vuelva a intentar')
-                        }
-                    } else {
+                                } else {
+                                    alert('No se pudo ejecutar la transacción. Informe o vuelva a intentar')
+                                }
+                            } else {
+                                alert('No se pudo ejecutar la transacción. Informe o vuelva a intentar')
+                            }
+                    }
+                    else {
                         alert('No se pudo ejecutar la transacción. Informe o vuelva a intentar')
                     }
                     $.unblockUI();
                 },
-                error: function (gerr) {
-                    console.log(gerr);
+                error: function (error) {
+                    console.log(error);
                     alert('Hubo un error. Informe o vuelva a intentar');
                     $.unblockUI();
                 }
